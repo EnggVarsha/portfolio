@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varsha Samal | Software Engineer & Java Full-Stack Developer</title>
+  
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            accent: {
+              teal: '#14b8a6',
+              cyan: '#06b6d4',
+              orange: '#f97316',
+              violet: '#8b5cf6'
+            },
+            darkBg: '#080c14',
+            darkSurface: '#0f1626',
+            darkCard: '#141d30',
+            darkBorder: '#1e293b'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Glassmorphism effects */
+    .glassmorphism {
+      background: rgba(15, 22, 38, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .light .glassmorphism {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    /* Ambient background grid */
+    .bg-grid {
+      background-size: 38px 38px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+    .light .bg-grid {
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    }
+
+    /* Active scroll spy link */
+    .nav-active {
+      color: #6366f1 !important;
+      font-weight: 600;
+      position: relative;
+    }
+    .nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #6366f1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#080c14] light:bg-slate-50 text-slate-200 light:text-slate-800 transition-colors duration-300 font-sans selection:bg-indigo-500 selection:text-white bg-grid">
+
+  <!-- Ambient glowing blobs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/4 -right-40 w-[30rem] h-[30rem] bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-1/3 w-96 h-96 bg-violet-600/15 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glassmorphism border-b border-slate-800/80 light:border-slate-200/80 transition-colors">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-[2px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-[#080c14] light:bg-white rounded-[10px] flex items-center justify-center">
+            <span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-indigo-400 to-cyan-400 text-sm font-mono">VS</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-slate-100 light:text-slate-900 font-extrabold text-base tracking-tight leading-tight">Varsha Samal</span>
+          <span class="text-[11px] font-mono text-indigo-400">@EnggVarsha</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300 light:text-slate-600">
+        <a href="#about" class="nav-link hover:text-indigo-400 transition-colors">About</a>
+        <a href="#skills" class="nav-link hover:text-indigo-400 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link hover:text-indigo-400 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="#education" class="nav-link hover:text-indigo-400 transition-colors">Education</a>
+        <a href="#contact" class="nav-link hover:text-indigo-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Action Items & Theme Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- Theme Switcher -->
+        <button id="themeToggle" class="w-9 h-9 rounded-xl border border-slate-700/80 light:border-slate-300 flex items-center justify-center text-slate-300 light:text-slate-700 hover:border-indigo-400 transition" aria-label="Toggle Theme">
+          <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+        </button>
+
+        <!-- GitHub Profile link -->
+        <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-700 light:border-slate-300 bg-slate-900/60 light:bg-white text-xs font-semibold hover:border-indigo-400 transition">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Resume Download CTA -->
+        <button id="resumeBtn" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-md shadow-indigo-600/30 transition hover:-translate-y-0.5">
+          <i class="fa-solid fa-download text-xs"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden w-9 h-9 rounded-xl border border-slate-700 light:border-slate-300 flex items-center justify-center text-slate-300 light:text-slate-700" aria-label="Toggle Menu">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars text-sm"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-800 light:border-slate-200 px-4 pt-3 pb-5 space-y-2 glassmorphism">
+      <a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">About</a>
+      <a href="#skills" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">Skills</a>
+      <a href="#projects" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">Projects</a>
+      <a href="#experience" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">Experience</a>
+      <a href="#education" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">Education</a>
+      <a href="#contact" class="mobile-nav-link block py-2 px-3 rounded-lg text-slate-300 light:text-slate-700 hover:bg-indigo-500/10">Contact</a>
+      <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block py-2 px-3 rounded-lg text-indigo-400 font-semibold">Visit GitHub (@EnggVarsha) &rarr;</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-24">
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-[calc(100vh-6rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 light:text-emerald-700 text-xs font-semibold mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Open to Software Engineering & Java Full-Stack Roles</span>
+        </div>
+
+        <!-- Avatar & Name Introduction -->
+        <div class="relative mb-6">
+          <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-rose-500 to-indigo-600 shadow-xl shadow-indigo-500/20">
+            <!-- GitHub Avatar SVG / Illustration -->
+            <svg class="w-full h-full rounded-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ff4b1f" />
+                  <stop offset="50%" stop-color="#ff9068" />
+                  <stop offset="100%" stop-color="#8a1438" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#sunsetGrad)"/>
+              <circle cx="95" cy="75" r="32" fill="#ffd100"/>
+              <!-- Silhouette land & birds matching user avatar -->
+              <path d="M0 115 C50 110, 150 110, 200 115 L200 200 L0 200 Z" fill="#111" />
+              <path d="M140 68 Q146 62 152 68 Q158 62 164 68 Q158 72 152 70 Q146 72 140 68 Z" fill="#111" />
+              <path d="M165 52 Q170 48 175 52 Q180 48 185 52 Q180 56 175 54 Q170 56 165 52 Z" fill="#111" />
+            </svg>
+          </div>
+          <span class="absolute bottom-1 right-2 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-[#141d30] border border-slate-700 text-indigo-400">Solapur, IN</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white light:text-slate-900 mb-6 leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400">Varsha Samal</span> 👋
+        </h1>
+
+        <p class="max-w-2xl text-base sm:text-lg text-slate-400 light:text-slate-600 leading-relaxed mb-8">
+          Computer Science Engineering student at <strong class="text-slate-200 light:text-slate-900 font-semibold">Walchand Institute of Technology</strong> with an <strong class="text-indigo-400 light:text-indigo-600 font-semibold">8.98 CGPA</strong>. Passionate about Core Java, backend architectures, full-stack systems, and cutting-edge Agentic AI platforms.
+        </p>
+
+        <!-- Key Metrics Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl w-full mb-10">
+          <div class="p-4 rounded-xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-sm">
+            <span class="text-xl sm:text-2xl font-black text-indigo-400 block font-mono">8.98</span>
+            <span class="text-xs text-slate-400 light:text-slate-500 font-medium">B.Tech CGPA (WIT)</span>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-sm">
+            <span class="text-xl sm:text-2xl font-black text-cyan-400 block font-mono">22+</span>
+            <span class="text-xs text-slate-400 light:text-slate-500 font-medium">GitHub Repos</span>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-sm">
+            <span class="text-xl sm:text-2xl font-black text-amber-400 block font-mono">150+</span>
+            <span class="text-xs text-slate-400 light:text-slate-500 font-medium">LeetCode DSA in Java</span>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-sm">
+            <span class="text-xl sm:text-2xl font-black text-emerald-400 block font-mono">80.0%</span>
+            <span class="text-xs text-slate-400 light:text-slate-500 font-medium">Polytechnic Diploma</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#projects" class="px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/30 transition hover:-translate-y-0.5 flex items-center gap-2">
+            <i class="fa-solid fa-code-fork text-xs"></i>
+            <span>Explore Projects & Repos</span>
+          </a>
+          <a href="#contact" class="px-6 py-3.5 rounded-xl font-semibold text-sm border border-slate-700 light:border-slate-300 hover:border-indigo-400 text-slate-200 light:text-slate-800 bg-[#0f1626] light:bg-white transition hover:-translate-y-0.5 flex items-center gap-2">
+            <i class="fa-regular fa-paper-plane text-xs"></i>
+            <span>Get in Touch</span>
+          </a>
+          <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl font-semibold text-sm text-indigo-400 border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 transition hover:-translate-y-0.5 flex items-center gap-2">
+            <i class="fa-brands fa-github text-sm"></i>
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">About Me</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Passionate Problem Solver & Engineering Student</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          
+          <!-- Narrative Box -->
+          <div class="lg:col-span-7 bg-[#0f1626] light:bg-white p-8 rounded-2xl border border-slate-800 light:border-slate-200 shadow-xl flex flex-col justify-between">
+            <div class="space-y-4">
+              <p class="text-slate-300 light:text-slate-700 text-base leading-relaxed">
+                I am a final-year Computer Science & Engineering student at <strong class="text-white light:text-slate-900 font-semibold">Walchand Institute of Technology (WIT), Solapur</strong>, maintaining a consistent academic record with an <span class="text-indigo-400 font-semibold">8.98 CGPA</span>. My technical journey began with a Diploma in Computer Engineering from Siddheshwar Women's Polytechnic (80.00%).
+              </p>
+              <p class="text-slate-300 light:text-slate-700 text-base leading-relaxed">
+                My primary focus revolves around <strong class="text-slate-100 light:text-slate-900">Core Java, Object-Oriented Design, and Spring Boot</strong> backend services, complemented by modern frontend workflows and innovative <strong class="text-cyan-400 font-medium">Agentic AI</strong> tools using Python and Streamlit.
+              </p>
+              <p class="text-slate-300 light:text-slate-700 text-base leading-relaxed">
+                I actively practice clean algorithm design by solving curated problems from the <span class="text-amber-400 font-mono">LeetCode Top Interview 150</span> and documenting daily learning through <span class="text-indigo-400 font-mono">UNSTOP POTD</span>.
+              </p>
+            </div>
+
+            <!-- Quick Details & Languages -->
+            <div class="mt-8 pt-6 border-t border-slate-800 light:border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+              <div class="flex items-center gap-2 text-slate-400 light:text-slate-600">
+                <i class="fa-solid fa-location-dot text-indigo-400 text-sm"></i>
+                <span>Solapur, Maharashtra, India</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-400 light:text-slate-600">
+                <i class="fa-solid fa-language text-cyan-400 text-sm"></i>
+                <span>English, Marathi, Telugu</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-400 light:text-slate-600">
+                <i class="fa-solid fa-envelope text-amber-400 text-sm"></i>
+                <a href="mailto:varshamal6@gmail.com" class="hover:text-white transition">varshamal6@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-2 text-slate-400 light:text-slate-600">
+                <i class="fa-brands fa-github text-violet-400 text-sm"></i>
+                <a href="https://github.com/EnggVarsha" target="_blank" class="hover:text-white transition">github.com/EnggVarsha</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards / Highlights -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+            <div class="p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-indigo-500/40 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-brands fa-java"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-white light:text-slate-900 text-base">Strong Core Java & DSA</h3>
+                  <p class="text-slate-400 light:text-slate-600 text-sm mt-1">Deep practice with OOP concepts, algorithmic complexity analysis, and 150+ solved challenges.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-cyan-500/40 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-white light:text-slate-900 text-base">Agentic AI & Full Stack</h3>
+                  <p class="text-slate-400 light:text-slate-600 text-sm mt-1">Building functional prototypes combining Python, Streamlit, RESTful APIs, and intelligent copilots.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-amber-500/40 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-white light:text-slate-900 text-base">Academic & Project Honors</h3>
+                  <p class="text-slate-400 light:text-slate-600 text-sm mt-1">3rd Rank in Billboard Design Competition (2023) & completed sponsored industry capstones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">Capabilities</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Technical Skill Stack</h2>
+          <p class="text-slate-400 light:text-slate-600 text-sm mt-3">Languages, frameworks, databases, and problem-solving tools I work with.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Column 1: Programming Languages -->
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-indigo-500/40 transition duration-300">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg mb-4">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="font-bold text-white light:text-slate-900 text-base mb-4">Languages</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Core Java</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Python</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">SQL</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">PHP</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">JavaScript</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">TypeScript</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Frameworks & Web -->
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-cyan-500/40 transition duration-300">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg mb-4">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="font-bold text-white light:text-slate-900 text-base mb-4">Frameworks & Web</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Spring Boot</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">JDBC</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Streamlit</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">HTML5 & CSS3</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Tailwind CSS</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Column 3: AI & Backend Architecture -->
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-violet-500/40 transition duration-300">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-lg mb-4">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="font-bold text-white light:text-slate-900 text-base mb-4">AI & Databases</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Agentic AI</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">RESTful APIs</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">MySQL</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">MongoDB</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Postman</span>
+            </div>
+          </div>
+
+          <!-- Column 4: DSA & Developer Tools -->
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-amber-500/40 transition duration-300">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg mb-4">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="font-bold text-white light:text-slate-900 text-base mb-4">DSA & Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">LeetCode Top 150</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">UNSTOP POTD</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Git & GitHub</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">VS Code</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 light:bg-slate-100 text-xs font-mono text-slate-300 light:text-slate-700 border border-slate-700/60 light:border-slate-200">Eclipse / IntelliJ</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS & GITHUB SHOWCASE -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">GitHub Repos & Works</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Projects & Repositories</h2>
+            <p class="text-slate-400 light:text-slate-600 text-sm mt-2">Live codebases, agentic systems, hackathons, and Java problem solving.</p>
+          </div>
+
+          <!-- Project Filter Tabs -->
+          <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-[#0f1626] light:bg-slate-100 border border-slate-800 light:border-slate-200">
+            <button class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition" data-filter="all">All (8)</button>
+            <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 light:text-slate-600 hover:text-white transition" data-filter="ai">AI & Agents</button>
+            <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 light:text-slate-600 hover:text-white transition" data-filter="java">Java & DSA</button>
+            <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 light:text-slate-600 hover:text-white transition" data-filter="web">Web & Capstone</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+          <!-- 1. JobSpark AI Agent -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="ai">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/30">Agentic AI • Capabl</span>
+                <span class="text-xs font-mono text-slate-500"><i class="fa-regular fa-star mr-1"></i>2 Stars</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">job_spark_ai_agent</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Agentic AI platform built with Python & Streamlit for autonomous job matching, resume analysis, and intelligent career application workflow automation.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Python</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Streamlit</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Agentic AI</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Automation</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/job_spark_ai_agent" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/job_spark_ai_agent
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="JobSpark AI Agent">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. SkillBridgeAI / SkillForge AI -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="ai">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Hackathon & Infosys</span>
+                <span class="text-xs font-mono text-slate-500">2025-2026</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">SkillBridgeAI (SkillForge)</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Hackathon and Infosys Springboard initiative building adaptive assessment engines, intelligent test question synthesis, and Java-backed exam grading services.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Java</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Spring Boot</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Adaptive AI</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">REST API</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/SkillBridgeAI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/SkillBridgeAI
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="SkillBridgeAI">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. LeetCode Top 150 -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="java">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">DSA Repository</span>
+                <span class="text-xs font-mono text-emerald-400">Java • Active</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">Leetcode-Top-150-</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Curated solutions & clean problem-solving notes for the LeetCode Top Interview 150. Includes complexity analysis (Big-O), approach breakdown, and test case validations.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Core Java</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Algorithms</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Data Structures</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Complexity Analysis</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/Leetcode-Top-150-" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/Leetcode-Top-150-
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="Leetcode Top 150">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. UNSTOP POTD JAVA -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="java">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Daily Coding Journey</span>
+                <span class="text-xs font-mono text-slate-500">Java POTD</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">UNSTOP-POTD-JAVA</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Daily documentation of solving Unstop Problem of the Day using Java. Explaining approaches, edge cases, space/time trade-offs, and continuous algorithmic improvement.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Java</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Daily Challenge</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Problem Solving</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/UNSTOP-POTD-JAVA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/UNSTOP-POTD-JAVA
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="Unstop POTD Java">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 5. Online Fertilizer Selling System -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="web">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Diploma Capstone</span>
+                <span class="text-xs font-mono text-slate-500">Industry Sponsored</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">Online Fertilizer Selling System</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                E-commerce portal developed for agriculture dealers featuring product catalogs, secure user authentication, shopping cart logic, and MySQL transactional order tracking.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">PHP</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">MySQL</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">E-Commerce</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">CRUD Ops</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="Online Fertilizer Portal">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. ExtensionShield -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="web">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/30">Security & Open Source</span>
+                <span class="text-xs font-mono text-slate-500">Python</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">ExtensionShield</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Chrome extension risk scanner that scans Chrome Web Store links or CRX/ZIP packages and generates evidence-based security and privacy audit reports.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Python</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Static Analysis</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Cybersecurity</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/ExtensionShield" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/ExtensionShield
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="ExtensionShield">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 7. SkinSense -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="ai">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Computer Vision</span>
+                <span class="text-xs font-mono text-slate-500">TypeScript</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">SkinSense</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                AI-powered web application analyzing facial skin conditions via computer vision to deliver personalized skincare insights and product suggestions.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">TypeScript</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Full Stack</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Computer Vision</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha/SkinSense" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha/SkinSense
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="SkinSense">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 8. MyCity Web Application & Hack-Mate -->
+          <div class="project-card group rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col justify-between hover:border-indigo-500/50 hover:shadow-xl transition-all duration-300" data-category="web">
+            <div class="p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">Web & Portal</span>
+                <span class="text-xs font-mono text-slate-500">SGI Training</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white light:text-slate-900 group-hover:text-indigo-400 transition-colors mb-2">MyCity Web Application</h3>
+              <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-6">
+                Interactive civic exploration portal showcasing local attractions, emergency directories, and responsive user interfaces built during SGI Solutions training.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">HTML5</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">CSS3</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">Bootstrap</span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 light:bg-slate-100 text-indigo-400 light:text-indigo-600">JavaScript</span>
+              </div>
+            </div>
+            <div class="p-7 pt-0 border-t border-slate-800/60 light:border-slate-100 flex items-center justify-between">
+              <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300">
+                <i class="fa-brands fa-github"></i> github.com/EnggVarsha
+              </a>
+              <button class="project-demo-btn inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white" data-title="MyCity Portal">
+                <span>Details</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & INTERNSHIPS -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">Career Path</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Work Experience & Internships</h2>
+        </div>
+
+        <div class="relative pl-6 sm:pl-8 border-l-2 border-indigo-500/30 space-y-12 ml-2 sm:ml-4">
+          
+          <!-- Experience 1: Capabl Internship -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-[#080c14] light:ring-slate-50 group-hover:scale-125 transition-transform"></span>
+            <div class="bg-[#0f1626] light:bg-white p-6 sm:p-7 rounded-2xl border border-slate-800 light:border-slate-200">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h3 class="text-lg font-bold text-white light:text-slate-900">AI Software Intern — JobSpark AI</h3>
+                <span class="text-xs font-mono text-indigo-400 light:text-indigo-600 font-semibold">2026</span>
+              </div>
+              <p class="text-sm font-medium text-cyan-400 mb-3">Capabl Internship</p>
+              <ul class="text-slate-300 light:text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1.5">
+                <li>Developed Python & Streamlit based agentic framework for automated application tracking & applicant profile enhancement.</li>
+                <li>Created automated workflows streamlining career recommendations and structured candidate data mapping.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: Infosys Springboard -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-[#080c14] light:ring-slate-50 group-hover:scale-125 transition-transform"></span>
+            <div class="bg-[#0f1626] light:bg-white p-6 sm:p-7 rounded-2xl border border-slate-800 light:border-slate-200">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h3 class="text-lg font-bold text-white light:text-slate-900">SkillForge AI Project Developer</h3>
+                <span class="text-xs font-mono text-cyan-400 light:text-cyan-600 font-semibold">2025 – 2026</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-400 mb-3">Infosys Springboard</p>
+              <ul class="text-slate-300 light:text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1.5">
+                <li>Built adaptive learning & exam generator utilizing enterprise Java stack technologies, modular design patterns, and REST endpoints.</li>
+                <li>Implemented clean test harnesses and state persistence layers for dynamic user evaluation metrics.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: CodSoft -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-[#080c14] light:ring-slate-50 group-hover:scale-125 transition-transform"></span>
+            <div class="bg-[#0f1626] light:bg-white p-6 sm:p-7 rounded-2xl border border-slate-800 light:border-slate-200">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h3 class="text-lg font-bold text-white light:text-slate-900">Web Developer Intern</h3>
+                <span class="text-xs font-mono text-amber-400 light:text-amber-600 font-semibold">2023 – 2024</span>
+              </div>
+              <p class="text-sm font-medium text-slate-300 light:text-slate-700 mb-3">CodSoft</p>
+              <ul class="text-slate-300 light:text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1.5">
+                <li>Constructed responsive, interactive web interfaces with HTML, CSS, and modern JavaScript.</li>
+                <li>Standardized mobile-first cross-browser styling and executed client-side dynamic form handling.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & ACHIEVEMENTS -->
+    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">Academics</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Education & Honors</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          
+          <!-- B.Tech Card -->
+          <div class="p-7 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-bl-full pointer-events-none"></div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">2023 – 2027</span>
+            <h3 class="text-xl font-bold text-white light:text-slate-900 mt-3">B.Tech in Computer Science and Engineering</h3>
+            <p class="text-indigo-400 light:text-indigo-600 font-semibold text-sm mt-1">Walchand Institute of Technology, Solapur</p>
+            <div class="mt-4 pt-4 border-t border-slate-800 light:border-slate-200 flex items-center justify-between text-sm">
+              <span class="text-slate-400 light:text-slate-600">Current Status: 6th Semester</span>
+              <span class="font-mono font-bold text-indigo-400">CGPA: 8.98</span>
+            </div>
+          </div>
+
+          <!-- Diploma Card -->
+          <div class="p-7 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-bl-full pointer-events-none"></div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">2020 – 2023</span>
+            <h3 class="text-xl font-bold text-white light:text-slate-900 mt-3">Diploma in Computer Engineering</h3>
+            <p class="text-cyan-400 light:text-cyan-600 font-semibold text-sm mt-1">Siddheshwar Women's Polytechnic, Solapur</p>
+            <div class="mt-4 pt-4 border-t border-slate-800 light:border-slate-200 flex items-center justify-between text-sm">
+              <span class="text-slate-400 light:text-slate-600">Completed with Distinction</span>
+              <span class="font-mono font-bold text-cyan-400">Score: 80.00%</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Secondary & Achievements Ribbon -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white light:text-slate-900 text-sm">3rd Rank - Billboard Design Competition</h4>
+              <p class="text-slate-400 light:text-slate-600 text-xs mt-0.5">Awarded 3rd prize in institute-level design showcase (2023).</p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white light:text-slate-900 text-sm">Industry Sponsored Capstone Recognition</h4>
+              <p class="text-slate-400 light:text-slate-600 text-xs mt-0.5">Engineered and presented full-scale Online Fertilizer system.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 light:border-slate-200">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-indigo-400 light:text-indigo-600 text-xs font-bold uppercase tracking-wider">Contact</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900 mt-2">Let’s Connect</h2>
+          <p class="text-slate-400 light:text-slate-600 text-sm mt-3">Interested in my work or looking to discuss entry-level engineering roles? Drop a message!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Info Column -->
+          <div class="md:col-span-5 space-y-4">
+            
+            <a href="mailto:varshamal6@gmail.com" class="block p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-indigo-500/50 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-mono">Email</span>
+                  <span class="text-sm font-semibold text-white light:text-slate-900">varshamal6@gmail.com</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="block p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200 hover:border-indigo-500/50 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-mono">GitHub Profile</span>
+                  <span class="text-sm font-semibold text-white light:text-slate-900">github.com/EnggVarsha</span>
+                </div>
+              </div>
+            </a>
+
+            <div class="p-5 rounded-2xl bg-[#0f1626] light:bg-white border border-slate-800 light:border-slate-200">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-mono">Location</span>
+                  <span class="text-sm font-semibold text-white light:text-slate-900">Solapur, Maharashtra, India</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Form Column -->
+          <div class="md:col-span-7 bg-[#0f1626] light:bg-white p-7 sm:p-8 rounded-2xl border border-slate-800 light:border-slate-200 shadow-xl">
+            <form id="contactForm" class="space-y-5">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Name *</label>
+                <input type="text" id="name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-[#080c14] light:bg-slate-50 border border-slate-700 light:border-slate-300 text-white light:text-slate-900 text-sm focus:outline-none focus:border-indigo-500 transition" />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Email Address *</label>
+                <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-[#080c14] light:bg-slate-50 border border-slate-700 light:border-slate-300 text-white light:text-slate-900 text-sm focus:outline-none focus:border-indigo-500 transition" />
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Subject</label>
+                <input type="text" id="subject" placeholder="Opportunity / Project Collaboration" class="w-full px-4 py-3 rounded-xl bg-[#080c14] light:bg-slate-50 border border-slate-700 light:border-slate-300 text-white light:text-slate-900 text-sm focus:outline-none focus:border-indigo-500 transition" />
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-300 light:text-slate-700 uppercase tracking-wider mb-2">Message *</label>
+                <textarea id="message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl bg-[#080c14] light:bg-slate-50 border border-slate-700 light:border-slate-300 text-white light:text-slate-900 text-sm focus:outline-none focus:border-indigo-500 transition"></textarea>
+              </div>
+
+              <div id="formStatus" class="hidden text-sm rounded-xl p-3.5"></div>
+
+              <button type="submit" id="submitBtn" class="w-full py-3.5 px-6 rounded-xl font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2">
+                <i class="fa-regular fa-paper-plane text-xs"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 light:border-slate-200 py-10 px-4 text-center text-xs text-slate-400 light:text-slate-600">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+        <span>© 2026 <strong class="text-slate-200 light:text-slate-800">Varsha Samal</strong> (EnggVarsha). All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#hero" class="hover:text-indigo-400 transition font-mono">Back to top &uarr;</a>
+        <a href="https://github.com/EnggVarsha" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition">GitHub</a>
+        <a href="mailto:varshamal6@gmail.com" class="hover:text-indigo-400 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="glassmorphism border border-indigo-500/40 text-slate-100 light:text-slate-900 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-sm">
+      <i class="fa-solid fa-circle-check text-emerald-400"></i>
+      <span id="toastMsg">Action processed successfully!</span>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Dark / Light Mode Switch
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    function setTheme(isDark) {
+      if (isDark) {
+        htmlElement.classList.add('dark');
+        htmlElement.classList.remove('light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        htmlElement.classList.remove('dark');
+        htmlElement.classList.add('light');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    }
+    setTheme(true);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.contains('dark');
+      setTheme(!isDark);
+    });
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuIcon.classList.replace('fa-bars', 'fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+      });
+    });
+
+    // 3. Project Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-indigo-600', 'text-white');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('active', 'bg-indigo-600', 'text-white');
+        btn.classList.remove('text-slate-400');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 4. Toast Notification
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(message) {
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // Resume button
+    document.getElementById('resumeBtn').addEventListener('click', () => {
+      showToast('Opening Varsha Samal - Resume PDF');
+    });
+
+    // Project Details click
+    document.querySelectorAll('.project-demo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title');
+        showToast('Viewing repository details for: ' + title);
+      });
+    });
+
+    // 5. Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        formStatus.className = 'text-sm rounded-xl p-3.5 bg-rose-500/10 text-rose-400 border border-rose-500/30';
+        formStatus.textContent = 'Please fill out all required fields.';
+        formStatus.classList.remove('hidden');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>Sending...</span>`;
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i class="fa-regular fa-paper-plane text-xs"></i> <span>Send Message</span>`;
+        formStatus.className = 'text-sm rounded-xl p-3.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30';
+        formStatus.textContent = `Thank you, ${name}! Your message has been noted. Varsha will respond shortly.`;
+        formStatus.classList.remove('hidden');
+        contactForm.reset();
+        showToast('Message sent successfully!');
+
+        setTimeout(() => formStatus.classList.add('hidden'), 5000);
+      }, 1200);
+    });
+
+    // 6. Active Nav Link on Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.pageYOffset >= top) {
+          currentSectionId = sec.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        if (link.getAttribute('href') === '#' + currentSectionId) {
+          link.classList.add('nav-active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
